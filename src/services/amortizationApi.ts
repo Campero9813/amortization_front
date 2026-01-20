@@ -1,4 +1,21 @@
-export const simulateAmortization = async (data) =>{
+export interface AmortizationRequest {
+  monto: number;
+  tasa_anual: number;
+  plazo_meses: number;
+}
+
+export interface AmortizationRow {
+  periodo: number;
+  cuota: number;
+  interes: number;
+  capital: number;
+  saldo: number;
+}
+
+export interface AmortizationResponse {
+  tabla: AmortizationRow[];
+}
+export const simulateAmortization = async (data: any) =>{
     try {
         const response = await fetch("http://127.0.0.1:8000/simulate", {
             method: "POST",

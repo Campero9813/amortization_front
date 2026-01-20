@@ -1,9 +1,22 @@
+interface FormData {
+  monto: number;
+  tasa_anual: number;
+  plazo_meses: number;
+}
+
+interface Props {
+  formData: FormData;
+  onChange: (name: keyof FormData, value: string) => void;
+  onSubmit: () => void;
+  loading: boolean;
+}
+
 export default function AmortizationForm({
     formData,
     onChange,
     onSubmit,
     loading,
-}) {
+}: Props) {
     return (
         <div className="card">
             {/* Monto */}

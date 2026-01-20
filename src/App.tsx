@@ -41,9 +41,9 @@ function App() {
   }, [formData]);
 
   const handleChange = (name: string, value: string) => {
-    setFormData((prev) => ({
+    setFormData((prev: FormData) => ({
       ...prev,
-      [name]: value,
+      [name]: Number(value),
     }));
     
     //Borrar la tabla si cambia el monto

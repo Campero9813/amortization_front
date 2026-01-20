@@ -1,4 +1,15 @@
-export default function AmortizationTable({ tabla }) {
+interface Row {
+  periodo: number;
+  cuota: number;
+  interes: number;
+  capital: number;
+  saldo: number;
+}
+
+interface Props {
+  tabla: Row[];
+}
+export default function AmortizationTable({ tabla }: Props) {
     if (!tabla || tabla.length === 0) return null;
     return (
         <div className="table-container">
