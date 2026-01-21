@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# 📊 Amortization Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**amortization-frontend** es una **Single Page Application (SPA)** desarrollada con **React, TypeScript y Vite**, que permite calcular y visualizar **tablas de amortización** a partir de los datos ingresados por el usuario, consumiendo una **API REST** como backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Descripción del Proyecto
 
-## React Compiler
+Esta aplicación permite a los usuarios:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Ingresar el **monto del préstamo**
+- Definir la **tasa de interés**
+- Establecer el **plazo**
+- Calcular la **tabla de amortización**
+- Visualizar los resultados en una **tabla clara y dinámica**
 
-## Expanding the ESLint configuration
+El frontend se comunica con una API REST encargada de realizar los cálculos financieros.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🖥️ Tipo de Aplicación
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Single Page Application (SPA)**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **React**
+- **TypeScript**
+- **Vite**
+- **CSS**
+
+---
+
+## 📂 Estructura del Proyecto
+
+```
+src/
+├── assets/        # Recursos estáticos (imágenes, íconos, etc.)
+├── components/    # Componentes reutilizables de la UI
+├── services/      # Servicios para consumo de la API REST
+├── App.css        # Estilos globales
+├── App.tsx        # Componente principal
+├── index.css      # Estilos base
+└── main.tsx       # Punto de entrada
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Scripts Disponibles
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+npm install
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
+
+---
+
+## 🔗 Comunicación con Backend
+
+- Consumo de API REST
+- Lógica de comunicación ubicada en `services`
+- URL configurable mediante variables de entorno
+
+---
+
+## 🎯 Objetivo del Proyecto
+
+SPA moderna orientada a buenas prácticas de desarrollo frontend y consumo de servicios REST, pensada como parte de un portafolio profesional.
+
+---
+
+## 📌 Próximas Mejoras
+
+- Validaciones avanzadas
+- Manejo de loading y errores
+- Mejoras visuales
+- Pruebas unitarias
+- Deploy en Vercel o Netlify
